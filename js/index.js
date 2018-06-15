@@ -20,6 +20,7 @@ var app = {
 
     cordovaReady : false,
     ui5ready: false,
+    myDB    : null,  
 
     // Application Constructor
     initialize: function() {
@@ -45,8 +46,15 @@ var app = {
         ui5ready = true;
         console.log('UI5 Ready');
         if (this.cordovaReady) {
+            this.initializeApp();
             this.startApp();
         }
+    },
+
+    initializeApp: function() {
+
+        //Create of fetch Database.
+        this.myDB = window.sqlitePlugin.openDatabase({name: "Renoprice.db", location: 'default'});
     },
 
     startApp: function(){
