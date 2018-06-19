@@ -4,7 +4,7 @@ sap.ui.define([
 	], function (BaseObject, Sorter) {
 	"use strict";
 
-	return BaseObject.extend("sap.ui.demo.masterdetail.model.GroupSortState", {
+	return BaseObject.extend("ca.metro.ui5.renoprice.model.GroupSortState", {
 
 		/**
 		 * Creates sorters and groupers for the master list.

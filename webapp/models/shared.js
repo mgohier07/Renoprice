@@ -1,5 +1,5 @@
 sap.ui.define([
-	"sap/ui/demo/walkthrough/models/local"
+	"ca/metro/ui5/renoprice/models/local"
 ], function ( Local ) {
 	"use strict";
 

@@ -1,5 +1,5 @@
 sap.ui.define([
-	"sap/ui/demo/walkthrough/models/shared"
+	"ca/metro/ui5/renoprice/walkthrough/models/shared"
 ], function ( Shared ) {
 	"use strict";
 

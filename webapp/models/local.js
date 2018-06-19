@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (UI5Object, JSONModel) {
 	"use strict";
 
-	return UI5Object.extend("ca.metro.fiori.model.local", {
+	return UI5Object.extend("ca.metro.ui5.renoprice.model.local", {
 
 		model: null,
 		

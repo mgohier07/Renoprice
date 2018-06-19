@@ -2,7 +2,7 @@
 	"_version": "1.8.0",
 
 	"sap.app": {
-		"id": "sap.ui.demo.masterdetail",
+		"id": "ca.metro.ui5.renoprice",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"title": "{{appTitle}}",
@@ -42,7 +42,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.ui.demo.masterdetail.view.App",
+			"viewName": "ca.metro.ui5.renoprice.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "app"
@@ -67,7 +67,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "sap.ui.demo.masterdetail.i18n.i18n"
+					"bundleName": "ca.metro.ui5.renoprice.i18n.i18n"
 				}
 			},
 			"": {
@@ -80,12 +80,11 @@
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"viewPath": "sap.ui.demo.masterdetail.view",
+				"viewPath": "ca.metro.ui5.renoprice.view",
 				"controlId": "idAppControl",
-				"controlAggregation": "detailPages",
+				"controlAggregation": "pages",
 				"bypassed": {
 					"target": [
-						"master",
 						"notFound"
 					]
 				},
@@ -100,14 +99,6 @@
 						"object",
 						"master"
 					]
-				},
-				{
-					"pattern": "Objects/{objectId}",
-					"name": "object",
-					"target": [
-						"master",
-						"object"
-					]
 				}
 			],
 
@@ -118,18 +109,9 @@
 					"viewId": "master",
 					"controlAggregation": "masterPages"
 				},
-				"object": {
-					"viewName": "Detail",
-					"viewId": "detail",
-					"viewLevel": 2
-				},
-				"detailObjectNotFound": {
-					"viewName": "DetailObjectNotFound",
-					"viewId": "detailObjectNotFound"
-				},
-				"detailNoObjectsAvailable": {
-					"viewName": "DetailNoObjectsAvailable",
-					"viewId": "detailNoObjectsAvailable"
+				"objectNotFound": {
+					"viewName": "ObjectNotFound",
+					"viewId": "objectNotFound"
 				},
 				"notFound": {
 					"viewName": "NotFound",

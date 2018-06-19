@@ -1,10 +1,10 @@
 sap.ui.define([
-		"sap/ui/demo/masterdetail/controller/BaseController",
+		"ca/metro/ui5/renoprice/masterdetail/controller/BaseController",
 		"sap/ui/model/json/JSONModel"
 	], function (BaseController, JSONModel) {
 		"use strict";
 
-		return BaseController.extend("sap.ui.demo.masterdetail.controller.App", {
+		return BaseController.extend("ca.metro.ui5.renoprice.controller.App", {
 
 			onInit : function () {
 				var oViewModel,

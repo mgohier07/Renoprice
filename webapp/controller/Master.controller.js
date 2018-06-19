@@ -1,18 +1,18 @@
 /*global history */
 sap.ui.define([
-		"sap/ui/demo/masterdetail/controller/BaseController",
+		"ca/metro/ui5/renoprice/masterdetail/controller/BaseController",
 		"sap/ui/model/json/JSONModel",
 		"sap/ui/model/Filter",
 		"sap/ui/model/FilterOperator",
 		"sap/m/GroupHeaderListItem",
 		"sap/ui/Device",
-		"sap/ui/demo/masterdetail/model/formatter",
-		"sap/ui/demo/masterdetail/model/grouper",
-		"sap/ui/demo/masterdetail/model/GroupSortState"
+		"ca/metro/ui5/renoprice/masterdetail/model/formatter",
+		"ca/metro/ui5/renoprice/masterdetail/model/grouper",
+		"ca/metro/ui5/renoprice/masterdetail/model/GroupSortState"
 	], function (BaseController, JSONModel, Filter, FilterOperator, GroupHeaderListItem, Device, formatter, grouper, GroupSortState) {
 		"use strict";
 
-		return BaseController.extend("sap.ui.demo.masterdetail.controller.Master", {
+		return BaseController.extend("ca.metro.ui5.renoprice.controller.Master", {
 
 			formatter: formatter,
 

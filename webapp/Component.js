@@ -1,13 +1,13 @@
 sap.ui.define([
 		"sap/ui/core/UIComponent",
 		"sap/ui/Device",
-		"sap/ui/demo/masterdetail/model/models",
-		"sap/ui/demo/masterdetail/controller/ListSelector",
-		"sap/ui/demo/masterdetail/controller/ErrorHandler"
+		"ca/metro/ui5/renoprice/model/models",
+		"ca/metro/ui5/renoprice/controller/ListSelector",
+		"ca/metro/ui5/renoprice/controller/ErrorHandler"
 	], function (UIComponent, Device, models, ListSelector, ErrorHandler) {
 		"use strict";
 
-		return UIComponent.extend("sap.ui.demo.masterdetail.Component", {
+		return UIComponent.extend("ca.metro.ui5.renoprice.Component", {
 
 			metadata : {
 				manifest : "json"

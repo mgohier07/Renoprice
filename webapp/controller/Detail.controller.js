@@ -1,12 +1,12 @@
 /*global location */
 sap.ui.define([
-		"sap/ui/demo/masterdetail/controller/BaseController",
+		"ca/metro/ui5/renoprice/masterdetail/controller/BaseController",
 		"sap/ui/model/json/JSONModel",
-		"sap/ui/demo/masterdetail/model/formatter"
+		"ca/metro/ui5/renoprice/masterdetail/model/formatter"
 	], function (BaseController, JSONModel, formatter) {
 		"use strict";
 
-		return BaseController.extend("sap.ui.demo.masterdetail.controller.Detail", {
+		return BaseController.extend("ca.metro.ui5.renoprice.controller.Detail", {
 
 			formatter: formatter,
 
