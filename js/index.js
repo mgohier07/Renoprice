@@ -25,42 +25,31 @@ var app = {
     // Application Constructor
     initialize: function() {
 
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        
     },
 
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
-    onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-        this.cordovaReady = true;
-        if (this.ui5ready) {
-            this.startApp();
-        }
 
-    },
 
     onUI5ready: function() {
         
         ui5ready = true;
         console.log('UI5 Ready');
-        if (this.cordovaReady) {
-            this.initializeApp();
-            this.startApp();
-        }
+        
+        this.initializeApp();
+        this.startApp();
+        
     },
 
     initializeApp: function() {
 
         //Create of fetch Database.
-        this.myDB = window.sqlitePlugin.openDatabase({name: "Renoprice.db", location: 'default'});
+       // this.myDB = window.sqlitePlugin.openDatabase({name: "Renoprice.db", location: 'default'});
     },
 
     startApp: function(){
         // Start UI5 app
         sap.ui.require([
-            "sap/ui/demo/masterdetail/localService/mockserver",
+            "ca/metro/ui5/renoprice/localService/mockserver",
             "sap/m/Shell",
             "sap/ui/core/ComponentContainer"
             ], function (mockserver, Shell, ComponentContainer) {
@@ -68,33 +57,22 @@ var app = {
             // TODO: remove this when switching to a real service
             mockserver.init();
             // initialize the UI component
+            debugger;
             new Shell({
                app: new ComponentContainer({
                   height: "100%",
-                  name: "sap.ui.demo.masterdetail",
+                  name: "ca.metro.ui5.renoprice",
                   settings: {
-                     id: "masterdetail"
+                     id: "renoprice"
                   }
                })
             }).placeAt("content");
         });
     },
 
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        // var parentElement = document.getElementById(id);
-        // var listeningElement = parentElement.querySelector('.listening');
-        // var receivedElement = parentElement.querySelector('.received');
-
-        // listeningElement.setAttribute('style', 'display:none;');
-        // receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
 };
 
 app.initialize();
-
 
 sap.ui.getCore().attachInit(function () {
     

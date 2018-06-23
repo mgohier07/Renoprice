@@ -1,14 +1,14 @@
 /*global history */
 sap.ui.define([
-		"ca/metro/ui5/renoprice/masterdetail/controller/BaseController",
+		"ca/metro/ui5/renoprice/controller/BaseController",
 		"sap/ui/model/json/JSONModel",
 		"sap/ui/model/Filter",
 		"sap/ui/model/FilterOperator",
 		"sap/m/GroupHeaderListItem",
 		"sap/ui/Device",
-		"ca/metro/ui5/renoprice/masterdetail/model/formatter",
-		"ca/metro/ui5/renoprice/masterdetail/model/grouper",
-		"ca/metro/ui5/renoprice/masterdetail/model/GroupSortState"
+		"ca/metro/ui5/renoprice/model/formatter",
+		"ca/metro/ui5/renoprice/model/grouper",
+		"ca/metro/ui5/renoprice/model/GroupSortState"
 	], function (BaseController, JSONModel, Filter, FilterOperator, GroupHeaderListItem, Device, formatter, grouper, GroupSortState) {
 		"use strict";
 

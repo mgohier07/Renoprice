@@ -20,6 +20,7 @@ sap.ui.define([
 			 * @override
 			 */
 			init : function () {
+				debugger;
 				this.oListSelector = new ListSelector();
 				this._oErrorHandler = new ErrorHandler(this);
 
