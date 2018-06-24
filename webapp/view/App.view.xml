@@ -2,8 +2,8 @@
 	controllerName="ca.metro.ui5.renoprice.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true"
-	busy="{appView>/busy}"
-	busyIndicatorDelay="{appView>/delay}"
 	xmlns="sap.m">
-	<SplitApp id="idAppControl" />
+	<App id="app"
+		 busy="{appView>/busy}"
+		 busyIndicatorDelay="{appView>/delay}"/>
 </mvc:View>

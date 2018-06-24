@@ -55,9 +55,8 @@ var app = {
             ], function (mockserver, Shell, ComponentContainer) {
             // set up test service for local testing
             // TODO: remove this when switching to a real service
-            mockserver.init();
+            //mockserver.init();
             // initialize the UI component
-            debugger;
             new Shell({
                app: new ComponentContainer({
                   height: "100%",

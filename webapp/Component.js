@@ -2,9 +2,9 @@ sap.ui.define([
 		"sap/ui/core/UIComponent",
 		"sap/ui/Device",
 		"ca/metro/ui5/renoprice/model/models",
-		"ca/metro/ui5/renoprice/controller/ListSelector",
-		"ca/metro/ui5/renoprice/controller/ErrorHandler"
-	], function (UIComponent, Device, models, ListSelector, ErrorHandler) {
+		"ca/metro/ui5/renoprice/controller/ErrorHandler",
+		"ca/metro/ui5/renoprice/util/component"
+	], function (UIComponent, Device, models, ErrorHandler, Component) {
 		"use strict";
 
 		return UIComponent.extend("ca.metro.ui5.renoprice.Component", {
@@ -21,9 +21,9 @@ sap.ui.define([
 			 */
 			init : function () {
 				debugger;
-				this.oListSelector = new ListSelector();
-				this._oErrorHandler = new ErrorHandler(this);
-
+				Component.init(this);
+				// set model error handlers 
+				this.setModelErrorHandlers(); 
 				// set the device model
 				this.setModel(models.createDeviceModel(), "device");
 
@@ -34,6 +34,14 @@ sap.ui.define([
 				this.getRouter().initialize();
 			},
 
+			setModelErrorHandlers: function() {
+				var ds = this.getManifestObject().getEntry("sap.app").dataSources;
+				for (var prop in ds) {
+					if (ds.hasOwnProperty(prop)) {
+					this.errorHandlers[prop] = new ErrorHandler(this, this.getModel(prop));
+					}
+				}
+			},
 			/**
 			 * The component is destroyed by UI5 automatically.
 			 * In this method, the ListSelector and ErrorHandler are destroyed.

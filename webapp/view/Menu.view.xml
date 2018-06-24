@@ -1,0 +1,35 @@
+<mvc:View
+	controllerName="ca.metro.ui5.renoprice.controller.Menu"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+
+	<Page
+		title="{masterView>/title}">
+
+		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+			header="Inventory"
+			subheader="Subtitle" press="press">
+			<tileContent>
+				<TileContent>
+					<content>
+						<ImageContent src="sap-icon://inventory"/>
+					</content>
+				</TileContent>
+			</tileContent>
+		</GenericTile>
+
+		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+			header="Shopping list"
+			subheader="Subtitle" press="press">
+			<tileContent>
+				<TileContent>
+					<content>
+						<ImageContent src="sap-icon://cart"/>
+					</content>
+				</TileContent>
+			</tileContent>
+		</GenericTile>
+
+	</Page>
+
+</mvc:View>

@@ -1,31 +1,22 @@
 {
 	"_version": "1.8.0",
-
-	"sap.app": {
+	"sap.app": 
+	{
 		"id": "ca.metro.ui5.renoprice",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
-
-		"applicationVersion": {
+		"applicationVersion": 
+		{
 			"version": "1.0.0"
-		},
-		"dataSources": {
-			"mainService": {
-				"uri": "/here/goes/your/serviceUrl/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0",
-					"localUri": "localService/metadata.xml"
-				}
-			}
 		}
 	},
-
-	"sap.ui": {
+	"sap.ui": 
+	{
 		"technology": "UI5",
-		"icons": {
+		"icons": 
+		{
 			"icon": "sap-icon://detail-view",
 			"favIcon": "",
 			"phone": "",
@@ -33,87 +24,101 @@
 			"tablet": "",
 			"tablet@2": ""
 		},
-		"deviceTypes": {
+		"deviceTypes": 
+		{
 			"desktop": true,
 			"tablet": true,
 			"phone": true
 		}
 	},
-
-	"sap.ui5": {
-		"rootView": {
+	"sap.ui5": 
+	{
+		"rootView": 
+		{
 			"viewName": "ca.metro.ui5.renoprice.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "app"
 		},
-
-		"dependencies": {
+		"dependencies": 
+		{
 			"minUI5Version": "1.42.0",
-			"libs": {
-				"sap.ui.core": {
-				},
-				"sap.m": {
-				}
+			"libs": 
+			{
+				"sap.ui.core": {},
+				"sap.m": {}
 			}
 		},
-
-		"contentDensities": {
+		"contentDensities": 
+		{
 			"compact": true,
 			"cozy": true
 		},
-
-		"models": {
+		"models": 
+		{
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
-				"settings": {
+				"settings": 
+				{
 					"bundleName": "ca.metro.ui5.renoprice.i18n.i18n"
 				}
-			},
-			"": {
-				"dataSource": "mainService",
-				"preload": true
 			}
 		},
-
-		"routing": {
-			"config": {
+		"routing": 
+		{
+			"config": 
+			{
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"viewPath": "ca.metro.ui5.renoprice.view",
-				"controlId": "idAppControl",
+				"controlId": "app",
 				"controlAggregation": "pages",
-				"bypassed": {
-					"target": [
-						"notFound"
-					]
-				},
+				"bypassed": 
+					{
+						"target": ["notFound"]
+					},
 				"async": true
 			},
-
-			"routes": [
+			"routes": 
+			[
 				{
 					"pattern": "",
-					"name": "master",
-					"target": [
-						"object",
-						"master"
-					]
+					"name": "menu",
+					"target": ["menu"]
+				},
+				{
+				"pattern": "Inventory",
+				"name": "inventory",
+				"target": ["inventory"]
 				}
 			],
-
-			"targets": {
-				"master": {
-					"viewName": "Master",
+			"targets": 
+			{
+				"menu": 
+				{
+					"viewName": "Menu",
 					"viewLevel": 1,
-					"viewId": "master",
-					"controlAggregation": "masterPages"
+					"viewId": "menu",
+					"title": "{i18n>menuTitle}"
 				},
-				"objectNotFound": {
-					"viewName": "ObjectNotFound",
-					"viewId": "objectNotFound"
+				"inventory": 
+				{
+					"viewName": "Inventory",
+					"viewId": "inventory",
+					"viewLevel": 2
 				},
-				"notFound": {
+				"detailObjectNotFound": 
+				{
+					"viewName": "DetailObjectNotFound",
+					"viewId": "detailObjectNotFound"
+				},
+				"detailNoObjectsAvailable": 
+				{
+					"viewName": "DetailNoObjectsAvailable",
+					"viewId": "detailNoObjectsAvailable"
+				},
+				"notFound": 
+				{
 					"viewName": "NotFound",
 					"viewId": "notFound"
 				}
